@@ -9,6 +9,8 @@ function injectFrame(params)
 
     var topBarDiv = document.getElementById("top-bar");
     topBarDiv.style.display = "none";
+    var gbDiv = document.getElementById("gb");
+    gbDiv.style.display = "none";
 
     var frameDiv;
     var mainDiv = document.getElementById("main");
