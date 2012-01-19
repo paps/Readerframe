@@ -1,0 +1,26 @@
+{
+"name": "Readerframe",
+"version": "1.3.2",
+"description": "Displays a frame on the right side of Google Reader.",
+"background_page": "background.html",
+"permissions": ["tabs"],
+"icons":
+    {
+        "16": "icon16.png",
+        "48": "icon48.png",
+        "128": "icon128.png"
+    },
+"page_action" :
+    {
+        "default_icon": "icon.png",
+        "default_popup": "popup.html",
+        "default_title": "Readerframe"
+    },
+"content_scripts": [
+    {
+        "matches": ["*://www.google.com/reader/*"],
+        "js": ["injector.js"],
+        "run_at": "document_start"
+    }
+]
+}

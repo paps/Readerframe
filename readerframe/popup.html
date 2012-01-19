@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script>
+            function save()
+            {
+                localStorage.setItem("url", document.getElementById("url").value);
+                chrome.tabs.getSelected(null, function(tab) {
+                    chrome.tabs.sendRequest(tab.id, {"what": "settings_changed"});
+                });
+            }
+            function frame_plus()
+            {
+                if (localStorage.getItem("size") < 95)
+                    localStorage.setItem("size", parseInt(localStorage.getItem("size"), 10) + 5);
+                document.getElementById("size").innerHTML = localStorage.getItem("size");
+                chrome.tabs.getSelected(null, function(tab) {
+                    chrome.tabs.sendRequest(tab.id, {"what": "settings_changed"});
+                });
+            }
+            function frame_minus()
+            {
+                if (localStorage.getItem("size") > 5)
+                    localStorage.setItem("size", parseInt(localStorage.getItem("size"), 10) - 5);
+                document.getElementById("size").innerHTML = localStorage.getItem("size");
+                chrome.tabs.getSelected(null, function(tab) {
+                    chrome.tabs.sendRequest(tab.id, {"what": "settings_changed"});
+                });
+            }
+            function disable()
+            {
+                if (localStorage.getItem("disabled") == "true")
+                {
+                    localStorage.setItem("disabled", "false");
+                    document.getElementById("disable").value = "Disable";
+                }
+                else
+                {
+                    localStorage.setItem("disabled", "true");
+                    document.getElementById("disable").value = "Enable";
+                }
+                chrome.tabs.getSelected(null, function(tab) {
+                    chrome.tabs.sendRequest(tab.id, {"what": "reload"});
+                });
+            }
+        </script>
+        <style>
+            body
+            {
+                background-color: #d3dadb;
+                font-family: Ubuntu, Arial;
+                font-size: 12px;
+            }
+        </style>
+    </head>
+    <body>
+        <table style="width: 300px;">
+            <tr>
+                <td>Frame URL</td>
+                <td><input type="text" name="url" id="url" /> <input type="button" value="OK" onclick="save()" /></td>
+            </tr>
+            <tr>
+                <td>Frame size&nbsp;&nbsp;&nbsp;&nbsp;</td>
+                <td>
+                    <input type="button" value="+" onclick="frame_plus()" style="width: 25px;" />
+                    <span id="size"></span>%
+                    <input type="button" value="-" onclick="frame_minus()" style="width: 25px;" />
+                </td>
+            </tr>
+            <tr>
+                <td></td>
+                <td style="text-align: right;">
+                    <input type="button" id="disable" value="Disable" onclick="disable()" />
+                </td>
+            </tr>
+        </table>
+        <script>
+            if (localStorage.getItem("disabled") == "true")
+                document.getElementById("disable").value = "Enable";
+            document.getElementById("url").value = localStorage.getItem("url");
+            document.getElementById("size").innerHTML = localStorage.getItem("size");
+        </script>
+    </body>
+</html>
