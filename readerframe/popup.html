@@ -66,13 +66,18 @@
         </style>
     </head>
     <body>
-        <table style="width: 300px;">
+        <table style="width: 370px;">
             <tr>
-                <td>Frame URL</td>
-                <td><input type="text" name="url" id="url" /> <input type="button" value="OK" onclick="save()" /></td>
+                <td style="text-align: right; width: 120px;">
+                    Frame URL:
+                </td>
+                <td style="width: 250px;">
+                    <input type="text" name="url" id="url" />
+                    <input type="button" value="OK" onclick="save()" />
+                </td>
             </tr>
             <tr>
-                <td>Frame size&nbsp;&nbsp;&nbsp;&nbsp;</td>
+                <td style="text-align: right;">Frame size:</td>
                 <td>
                     <input type="button" value="+" onclick="frame_plus()" style="width: 25px;" />
                     <span id="size"></span>%
@@ -82,6 +87,7 @@
             <tr>
                 <td style="font-size: 10px;">
                     <a href="https://github.com/paps/Readerframe" target="_blank">Source code</a>
+                    |
                     <a href="https://github.com/paps/Readerframe/blob/master/LICENSE" target="_blank">License</a>
                 </td>
                 <td style="text-align: right;">

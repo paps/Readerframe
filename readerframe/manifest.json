@@ -1,6 +1,6 @@
 {
 "name": "Readerframe",
-"version": "1.3.4",
+"version": "1.3.5",
 "description": "Displays a frame on the right side of Google Reader and removes unnecessary divs.",
 "background_page": "background.html",
 "permissions": ["tabs"],
