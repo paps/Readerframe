@@ -5,9 +5,9 @@
             function onRequest(request, sender, sendResponse)
             {
                 if (localStorage.getItem("url") == null)
-                    localStorage.setItem("url", "http://streamie.org");
+                    localStorage.setItem("url", "https://web.tweetdeck.com");
                 if (localStorage.getItem("size") == null)
-                    localStorage.setItem("size", 30);
+                    localStorage.setItem("size", 35);
                 chrome.pageAction.show(sender.tab.id);
                 if (localStorage.getItem("disabled") == "true")
                     sendResponse("", "");
