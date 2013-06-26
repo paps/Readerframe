@@ -1,8 +1,8 @@
-# Readerframe Google Chrome Extension ![project-status](http://stillmaintained.com/paps/Readerframe.png)#
+# Readerframe for Chrome ![project-status](http://stillmaintained.com/paps/Readerframe.png)#
 
-The project is abandoned because Google Reader has been discontinued since July 1st.
+The project is abandoned because Google Reader has been discontinued since July 1st, 2013.
 
-Google Reader layout modifications for maximizing productivity.
+**Google Reader layout modifications for maximizing productivity.**
 
 ![](https://github.com/paps/Readerframe/blob/master/screenshots/small.png?raw=true)
 
