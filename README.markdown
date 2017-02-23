@@ -1,4 +1,4 @@
-# Readerframe for Chrome ![project-status](http://stillmaintained.com/paps/Readerframe.png)#
+# Readerframe for Chrome #
 
 The project is abandoned because Google Reader has been discontinued since July 1st, 2013.
 
